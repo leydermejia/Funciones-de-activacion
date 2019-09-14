@@ -1,0 +1,35 @@
+import numpy as np
+import math
+import pylab as plt
+from scipy.stats import norm
+
+#Constantes
+mu=998.8
+sigma= 73.10
+x1= 900
+x2= 1100
+
+#Calculando la tranformacion de z
+z1= (x1-mu)/sigma
+z2= (x2-mu)/sigma
+
+#Rango de x en especifico
+x= np.arange(z1, z2, 0.001)
+
+#Rango completo de x 
+x_all= np.arange(-10,10,0.001)
+
+#mean=0, stdev=1, ya que se calculo la transformacion de z
+y= norm.pdf(x,0,1)
+y2= norm.pdf(x_all,0,1)
+
+#Grafico
+fig, ax= plt.subplots(figsize=(6,5))
+ax.plot(x_all,y2)
+ax.set_xlim([-6,6])
+ax.set_title('Gauus')
+ax.set_xlabel('eje x')
+ax.set_ylabel('ejer y')
+
+#Mostrando el grafico
+plt.show()

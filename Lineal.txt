@@ -1,0 +1,29 @@
+from matplotlib import pyplot
+import pylab as plt
+import numpy as np
+
+def f(x):
+    return 4*x-7
+
+#Esta variable se genera en una lista con valores del -10 al 10.
+#Estos valores serán los que tomara x.
+x = range(-10, 10)
+
+#Con el método plot especificamos que función graficaremos.
+#Lo primero es la variable con los valores de x.
+#Lo segundo le pasamos todos estos valares a la función con ayuda de un bucle.
+
+pyplot.plot(x, [f(i) for i in x])
+
+# línea de la cuadrícula en el fondo.
+plt.grid()
+
+# titulo
+plt.title ('Lineal')
+
+#Especificamos los limites de los ejes.
+pyplot.xlim(-11, 11)
+pyplot.ylim(-11, 11)
+
+# Mostramos el gráfico.
+pyplot.show()

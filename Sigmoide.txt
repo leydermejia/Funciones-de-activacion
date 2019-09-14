@@ -1,0 +1,23 @@
+from matplotlib import pylab
+import pylab as plt
+import numpy as np
+
+# linespace: genera una matriz desde el valor inicial y final con número solicitado de elementos.
+x = plt.linspace(-10,10,10)
+y = plt.linspace(-10,10,10)
+
+# prepararando el gráfico,  el color red o blue y la etiqueta
+plt.plot(x, sigmoid(x), 'r', label='linspace(-10,10,10)')
+plt.plot(y, sigmoid(y), 'b', label='linspace(-10,10,100)')
+
+# línea de la cuadrícula en el fondo.
+plt.grid()
+
+plt.xlabel('eje X')
+plt.ylabel('eke Y')
+
+# Titulo
+plt.title('Sigmoide')
+
+# Mostramos el gráfico.
+plt.show()
